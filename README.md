@@ -1,4 +1,4 @@
-# Scala_Project_ML_Career_Service
+# Scala Project ML Career Service
 CSYE7200 Scala Project : ML Career Service
 
 # Introduction
