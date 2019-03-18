@@ -14,7 +14,7 @@ CSYE7200 Scala Project : ML Career Service
 
 | Name| NUID| Email Address|
 | ------------- |:-------------:| -----:|
-| Menita Koonani    | 0001883043 |[koonani.m@husky.neu.edu](mailto:koonani.m@husky.neu.edu) |
+| Menita Koonani    | 001883043 |[koonani.m@husky.neu.edu](mailto:koonani.m@husky.neu.edu) |
 | Raghavi Kirouchenaradjou     | 001826638|   [kirouchenaradjou.r@husky.neu.edu](mailto:kirouchenaradjou.r@husky.neu.edu) |
 | Sreerag Mandakathil Sreenath | 001838559      |    [mandakathil.s@husky.neu.edu](mailto:mandakathil.s@husky.neu.edu) |
 
