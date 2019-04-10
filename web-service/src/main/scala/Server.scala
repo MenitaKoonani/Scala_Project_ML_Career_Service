@@ -1,16 +1,18 @@
-import java.io.File
+import java.io.{File, FileOutputStream}
 import java.nio.file.Paths
+import java.util.UUID
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-
-import scala.util.{Failure, Success}
-import akka.stream.ActorMaterializer
-import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.model.{HttpResponse, Multipart, StatusCodes}
+import akka.http.scaladsl.server.Directives.{entity, _}
 import akka.http.scaladsl.server.directives.FileInfo
+import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.FileIO
+import akka.util.ByteString
 
 import scala.concurrent.ExecutionContext
+import scala.util.{Failure, Success}
 
 object Server extends App {
   val host = "0.0.0.0"
@@ -51,7 +53,33 @@ object Server extends App {
             }
         }
       }
+    } ~
+        pathPrefix("pdf_file") {
+            (post & entity(as[Multipart.FormData])) { fileData =>
+              complete {
+                val fileName = UUID.randomUUID().toString+".pdf"
+                val temp = System.getProperty("java.io.tmpdir")
+                val filePath = temp + "/" + fileName
+                println(fileName)
+                processFile(filePath,fileData).map { fileSize =>
+                  HttpResponse(StatusCodes.OK, entity = s"File successfully uploaded. $fileData Fil size is $fileSize")
+                }.recover {
+                  case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading")
+                }
+              }
+          }
     }
+  private def processFile(filePath: String, fileData: Multipart.FormData) = {
+    val fileOutput = new FileOutputStream(filePath)
+    fileData.parts.mapAsync(1) { bodyPart ⇒
+      def writeFileOnLocal(array: Array[Byte], byteString: ByteString): Array[Byte] = {
+        val byteArray: Array[Byte] = byteString.toArray
+        fileOutput.write(byteArray)
+        array ++ byteArray
+      }
+      bodyPart.entity.dataBytes.runFold(Array[Byte]())(writeFileOnLocal)
+    }.runFold(0)(_ + _.length)
+  }
 
   Http().bindAndHandle(route, host, port)
 }
