@@ -25,3 +25,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-hive" % sparkVersion,
   "mysql" % "mysql-connector-java" % "5.1.6"
 )
+
+libraryDependencies ++= Seq(
+  "com.tsukaby" %% "naive-bayes-classifier-scala" % "0.2.0"
+)
