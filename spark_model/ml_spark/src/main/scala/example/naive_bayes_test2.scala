@@ -1,7 +1,7 @@
 package example
 
-import org.apache.spark.ml.Pipeline
-import org.apache.spark.ml.classification.NaiveBayes
+import org.apache.spark.ml.{Pipeline, PipelineModel}
+import org.apache.spark.ml.classification.{NaiveBayes, NaiveBayesModel}
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{HashingTF, StringIndexer, Tokenizer}
 import org.apache.spark.sql.{SaveMode, SparkSession}
@@ -55,6 +55,12 @@ object naive_bayes_test2 extends App {
   val evaluatorRF = new MulticlassClassificationEvaluator().setLabelCol("label").setPredictionCol("prediction").setMetricName("accuracy")
   val accuracy = evaluatorRF.evaluate(predictions)
 
-  println(f"Accuracy = $accuracy%.2f")
+
+
+  model.write.overwrite().save("src/main/scala/example/spark-model")
+
+  val sameModel = PipelineModel.load("src/main/scala/example/spark-model")
+
+  println(f"Accuracy = $accuracy%.4f")
   spark.stop()
 }
