@@ -10,6 +10,7 @@ import org.apache.spark.{SparkConf}
 import org.apache.log4j.Logger
 import org.apache.log4j.Level
 
+
 object naive_bayes_test2 extends App {
 
   Logger.getLogger("org").setLevel(Level.OFF)
@@ -25,6 +26,7 @@ object naive_bayes_test2 extends App {
     .appName("NaiveBayes Text classifier")
     .config(conf)
     .getOrCreate()
+
 
   // Specifying the location of the data file
   val dataFile = "src/main/scala/example/indeed_10-04-2019_cleaned.json"
@@ -49,8 +51,6 @@ object naive_bayes_test2 extends App {
   trainingData.show()
   println("Testing Data")
   testData.show()
-
-  // Generating the training model
   val model = pipeline.fit(trainingData)
 
   val prediction = model.transform(testData)
@@ -78,6 +78,6 @@ object naive_bayes_test2 extends App {
 
   val sameModel = PipelineModel.load("src/main/scala/example/spark-model")
 
-  println(f"Accuracy = $accuracy%.2f")
+  println(f"Accuracy = $accuracy%.4f")
   spark.stop()
 }
