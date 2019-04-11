@@ -32,8 +32,7 @@ object naive_bayes_test2 extends App {
   // Loading the data file into a data frame
   val df = spark.read.json(dataFile)
 
-  val dfSmall = df.select("job_title", "job_posting_desc").where("job_title != 'data analyst'")
-
+  val dfSmall = df.select("job_title", "job_posting_desc")
   // Defining processes for the pipeline
   val indexer = new StringIndexer().setInputCol("job_title").setOutputCol("label")
   val tokenizer = new Tokenizer().setInputCol("job_posting_desc").setOutputCol("tokens")
