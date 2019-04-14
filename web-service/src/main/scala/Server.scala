@@ -10,6 +10,8 @@ import akka.http.scaladsl.server.directives.FileInfo
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.FileIO
 import akka.util.ByteString
+import org.apache.pdfbox.pdmodel.PDDocument
+import org.apache.pdfbox.text.PDFTextStripper
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
@@ -61,10 +63,15 @@ object Server extends App {
                 val temp = System.getProperty("java.io.tmpdir")
                 val filePath = temp + "/" + fileName
                 println(fileName)
+
                 processFile(filePath,fileData).map { fileSize =>
-                  HttpResponse(StatusCodes.OK, entity = s"File successfully uploaded. $fileData Fil size is $fileSize")
+                  val pdf = PDDocument.load(new File(filePath))
+                  val stripper = new PDFTextStripper
+                  stripper.setStartPage(1)
+                  complete(stripper.getText(pdf))
+                  HttpResponse(StatusCodes.OK, entity = stripper.getText(pdf))
                 }.recover {
-                  case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading")
+                  case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
                 }
               }
           }
