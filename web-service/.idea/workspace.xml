@@ -218,8 +218,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3107426712586" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="3633301712" />
+        <entry key="$PROJECT_DIR$" value="3108965686555" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="637698737" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="2567920773" />
       </map>
     </option>
@@ -228,6 +228,7 @@
         <entry key="$USER_HOME$/CSYE7200-1/assignment-functional-composition" value="PREVIEW" />
         <entry key="$USER_HOME$/CSYE7200-1/assignment-lazy" value="PREVIEW" />
         <entry key="$USER_HOME$/CSYE7200-1/assignment-web-crawler" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$USER_HOME$/Documents/Raghavi_Scala/CSYE7200/assignment-functional-composition" value="PREVIEW" />
         <entry key="$USER_HOME$/Documents/Raghavi_Scala/CSYE7200/assignment-helloworld" value="PREVIEW" />
         <entry key="$USER_HOME$/Documents/Raghavi_Scala/CSYE7200/assignment-lazy" value="PREVIEW" />
@@ -252,12 +253,12 @@
       <workItem from="1554209113446" duration="1059000" />
       <workItem from="1554213986840" duration="4145000" />
       <workItem from="1554919095247" duration="4924000" />
-      <workItem from="1555251467601" duration="862000" />
+      <workItem from="1555251467601" duration="1465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12767000" />
+    <option name="totallyTimeSpent" value="13370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -281,7 +282,7 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827586" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827586" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3291815" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26627603" />
