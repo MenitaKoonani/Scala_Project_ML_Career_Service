@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.Tokenizer","timestamp":1555003591857,"sparkVersion":"2.3.0","uid":"tok_0573ec0a00c5","paramMap":{"inputCol":"job_posting_desc","outputCol":"tokens"}}

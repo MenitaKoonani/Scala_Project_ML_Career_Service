@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/.idea/modules/final_project-ml_spark.iml" filepath="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/.idea/modules/final_project-ml_spark.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ml_spark.iml" filepath="$PROJECT_DIR$/.idea/modules/ml_spark.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ml_spark-build.iml" filepath="$PROJECT_DIR$/.idea/modules/ml_spark-build.iml" />
+      <module fileurl="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/.idea/modules/ml_spark-build~1.iml" filepath="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/.idea/modules/ml_spark-build~1.iml" />
     </modules>
   </component>
 </project>
