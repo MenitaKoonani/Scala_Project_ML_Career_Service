@@ -1,4 +1,4 @@
-package example
+package classifier
 
 import org.apache.spark.ml.{Pipeline, PipelineModel}
 import org.apache.spark.ml.classification.{NaiveBayes}
