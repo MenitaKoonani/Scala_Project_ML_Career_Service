@@ -10,16 +10,15 @@ import akka.http.scaladsl.server.directives.FileInfo
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.FileIO
 import akka.util.ByteString
+import org.apache.log4j.{Level, Logger}
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.text.PDFTextStripper
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+import sparkModel.{JobMatch, NaiveBayesClass, WordFilter}
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
-import org.apache.log4j.{Level, Logger}
-import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
-import org.codehaus.jettison.json.JSONObject
-import sparkModel.{JobMatch, NaiveBayesClass, WordFilter}
 
 object Server extends App {
 
@@ -124,6 +123,11 @@ object Server extends App {
     }.runFold(0)(_ + _.length)
   }
 
-  Http().bindAndHandle(route, host, port)
+  val bindingFuture = Http().bindAndHandle(route, host, port)
+
+  bindingFuture.onComplete {
+    case Success(serverBinding) => println(s"Listening to ${serverBinding.localAddress}")
+    case Failure(error) => println(s"error: ${error.getMessage}")
+  }
 
 }
