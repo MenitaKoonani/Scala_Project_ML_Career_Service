@@ -15,8 +15,29 @@ import org.apache.pdfbox.text.PDFTextStripper
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
+import org.apache.log4j.{Level, Logger}
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+import sparkModel.{NaiveBayesClass, WordFilter}
 
 object Server extends App {
+
+  Logger.getLogger("org").setLevel(Level.OFF)
+  Logger.getLogger("akka").setLevel(Level.OFF)
+
+  val conf = new SparkConf()
+  conf.setMaster("local")
+  conf.setAppName("NaiveBayes Text classifier")
+
+  val spark = SparkSession
+    .builder()
+    .appName("NaiveBayes Text classifier")
+    .config(conf)
+    .getOrCreate()
+
+
+
+
   val host = "0.0.0.0"
   val port = 9000
   val jsonString = """
@@ -68,8 +89,13 @@ object Server extends App {
                   val pdf = PDDocument.load(new File(filePath))
                   val stripper = new PDFTextStripper
                   stripper.setStartPage(1)
-                  complete(stripper.getText(pdf))
-                  HttpResponse(StatusCodes.OK, entity = stripper.getText(pdf))
+                  var resumeText = stripper.getText(pdf)
+                  var model = new NaiveBayesClass()
+                  var wordfilter = new WordFilter()
+                  var resume_cleaned = wordfilter.stringOperations(resumeText,spark)
+                  var predicted_role = model.predict(resume_cleaned,"src/main/scala/classifier/spark-model",spark)
+                  
+                  HttpResponse(StatusCodes.OK, entity = predicted_role)
                 }.recover {
                   case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
                 }
@@ -89,4 +115,5 @@ object Server extends App {
   }
 
   Http().bindAndHandle(route, host, port)
+
 }
