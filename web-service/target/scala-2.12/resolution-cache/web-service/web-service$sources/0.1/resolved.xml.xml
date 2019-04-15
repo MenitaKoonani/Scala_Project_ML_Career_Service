@@ -4,7 +4,7 @@
 		module="web-service$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190414095227"
+		publication="20190415144509"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
