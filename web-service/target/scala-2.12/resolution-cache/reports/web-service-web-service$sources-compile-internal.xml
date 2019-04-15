@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190414095227"/>
+		date="20190415144510"/>
 	<dependencies>
 		<module organisation="org.apache.pdfbox" name="pdfbox">
 			<revision name="2.0.1" status="release" pubdate="20160422130802" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="13">
@@ -15,7 +15,7 @@
 				<metadata-artifact status="no" details="" size="7946" time="0" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\pdfbox\ivy-2.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/pdfbox/pdfbox/2.0.1/pdfbox-2.0.1.pom"/>
 				<caller organisation="web-service" name="web-service$sources" conf="compile-internal, compile, provided, optional" rev="2.0.1" rev-constraint-default="2.0.1" rev-constraint-dynamic="2.0.1" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="pdfbox" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2311412" time="357" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\pdfbox\srcs\pdfbox-2.0.1-sources.jar">
+					<artifact name="pdfbox" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2311412" time="0" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\pdfbox\srcs\pdfbox-2.0.1-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/pdfbox/pdfbox/2.0.1/pdfbox-2.0.1-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -147,7 +147,7 @@
 				<metadata-artifact status="no" details="" size="6831" time="0" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\fontbox\ivy-2.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/pdfbox/fontbox/2.0.1/fontbox-2.0.1.pom"/>
 				<caller organisation="web-service" name="web-service$sources" conf="compile-internal, compile, provided, optional" rev="2.0.1" rev-constraint-default="2.0.1" rev-constraint-dynamic="2.0.1" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="fontbox" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="1428018" time="349" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\fontbox\srcs\fontbox-2.0.1-sources.jar">
+					<artifact name="fontbox" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1428018" time="0" location="C:\Users\ragha\.ivy2\cache\org.apache.pdfbox\fontbox\srcs\fontbox-2.0.1-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/pdfbox/fontbox/2.0.1/fontbox-2.0.1-sources.jar"/>
 					</artifact>
 				</artifacts>
