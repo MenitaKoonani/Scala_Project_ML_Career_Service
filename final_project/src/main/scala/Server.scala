@@ -18,7 +18,8 @@ import scala.util.{Failure, Success}
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
-import sparkModel.{NaiveBayesClass, WordFilter}
+import org.codehaus.jettison.json.JSONObject
+import sparkModel.{JobMatch, NaiveBayesClass, WordFilter}
 
 object Server extends App {
 
@@ -94,8 +95,17 @@ object Server extends App {
                   var wordfilter = new WordFilter()
                   var resume_cleaned = wordfilter.stringOperations(resumeText,spark)
                   var predicted_role = model.predict(resume_cleaned,"src/main/scala/classifier/spark-model",spark)
-                  
-                  HttpResponse(StatusCodes.OK, entity = predicted_role)
+                  println(predicted_role)
+                  val result_match = new JobMatch()
+                  val array = result_match.getJobMatches(predicted_role,spark)
+                  println(array)
+                  val jsonString =
+                    s"""{
+                      |"Predicted Role": "$predicted_role",
+                      | "Available Jobs" : [$array]
+                      |}""".stripMargin
+
+                  HttpResponse(StatusCodes.OK, entity = jsonString)
                 }.recover {
                   case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
                 }
