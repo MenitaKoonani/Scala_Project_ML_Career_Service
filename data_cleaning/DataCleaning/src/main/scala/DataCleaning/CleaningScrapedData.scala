@@ -46,15 +46,13 @@ object CleaningScrapedData extends App {
     .setInputCol("words")
     .setOutputCol("filtered")
 
-  println("Tokenized Dataframe")
-
   val tokenizedDesc = remover.transform(regexTokenized)
+
+  println("Cleaned Dataframe")
   var cleanedDF = tokenizedDesc.withColumn("filtered", concat_ws(" ", col("filtered")))
   cleanedDF = cleanedDF.drop("words").drop("filtered")
   cleanedDF.show()
 
   spark.stop()
+
 }
-
-
-
