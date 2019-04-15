@@ -29,6 +29,8 @@ object Server extends App {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   def tempDestination(fileInfo: FileInfo): File =
     File.createTempFile(fileInfo.fileName, ".tmp")
+
+  var filePathToBeDeleted = ""
   def route = path("") {
     get {
       complete(jsonString)
@@ -62,13 +64,12 @@ object Server extends App {
                 val fileName = UUID.randomUUID().toString+".pdf"
                 val temp = System.getProperty("java.io.tmpdir")
                 val filePath = temp + "/" + fileName
-                println(fileName)
-
+                println(filePath)
+                filePathToBeDeleted = filePath
                 processFile(filePath,fileData).map { fileSize =>
                   val pdf = PDDocument.load(new File(filePath))
                   val stripper = new PDFTextStripper
                   stripper.setStartPage(1)
-                  complete(stripper.getText(pdf))
                   HttpResponse(StatusCodes.OK, entity = stripper.getText(pdf))
                 }.recover {
                   case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
@@ -88,5 +89,10 @@ object Server extends App {
     }.runFold(0)(_ + _.length)
   }
 
-  Http().bindAndHandle(route, host, port)
+  val bindingFuture = Http().bindAndHandle(route, host, port)
+
+  bindingFuture.onComplete {
+    case Success(serverBinding) => println(s"Listening to ${serverBinding.localAddress}")
+    case Failure(error) => println(s"error: ${error.getMessage}")
+  }
 }
