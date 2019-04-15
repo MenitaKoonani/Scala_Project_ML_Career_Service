@@ -1,4 +1,4 @@
-package DataCleaning
+package sparkModel
 
 import org.apache.spark.ml.feature.{RegexTokenizer, StopWordsRemover}
 import org.apache.spark.sql.SparkSession
