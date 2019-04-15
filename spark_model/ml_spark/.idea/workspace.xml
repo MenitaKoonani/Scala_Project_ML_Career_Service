@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NaiveBayesTextClassifier.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NaiveBayesTextClassifier.scala" pinned="false" current-in-tab="false">
         <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesTextClassifier.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+            <state relative-caret-position="77">
+              <caret line="62" column="26" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="26" />
               <folding>
                 <element signature="e#20#72#0" expanded="true" />
               </folding>
@@ -50,8 +50,8 @@
       <file leaf-file-name="NB2.scala" pinned="false" current-in-tab="false">
         <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NB2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="237">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#20#59#0" expanded="true" />
               </folding>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NaiveBayesClass.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NaiveBayesClass.scala" pinned="false" current-in-tab="true">
         <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesClass.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+            <state relative-caret-position="200">
+              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="e#19#71#0" expanded="true" />
               </folding>
@@ -83,7 +83,7 @@
       <file leaf-file-name="build.sbt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="300">
               <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
             </state>
           </provider>
@@ -119,10 +119,10 @@
         <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/example/NaiveBayesClass.scala" />
         <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/example/nb2.scala" />
         <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/example/NB2.scala" />
-        <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NB2.scala" />
-        <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesClass.scala" />
         <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/build.sbt" />
         <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesTextClassifier.scala" />
+        <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NB2.scala" />
+        <option value="E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesClass.scala" />
       </list>
     </option>
   </component>
@@ -143,8 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,6 +180,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -204,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.NaiveBayesTextClassifier">
+  <component name="RunManager" selected="Application.NB2">
     <configuration name="NB2" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="classifier.NB2" />
       <module name="final_project-ml_spark" />
@@ -310,8 +310,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NaiveBayesTextClassifier" />
         <item itemvalue="Application.NB2" />
+        <item itemvalue="Application.NaiveBayesTextClassifier" />
         <item itemvalue="Application.naive_bayes_test2" />
         <item itemvalue="Application.naiveBayes_test" />
         <item itemvalue="Application.NaiveBayesExample2" />
@@ -412,14 +412,16 @@
       <workItem from="1555259066252" duration="643000" />
       <workItem from="1555265842041" duration="1503000" />
       <workItem from="1555339770589" duration="8463000" />
+      <workItem from="1555350495261" duration="2565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56947000" />
+    <option name="totallyTimeSpent" value="59512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="sbt" order="3" />
@@ -428,7 +430,6 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.32965517" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -441,7 +442,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.31862068" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" visible="true" weight="0.31862068" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32965517" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28710938" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
@@ -453,6 +454,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32965517" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
@@ -469,6 +471,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/example/NaiveBayesExample2.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/classifier/NaiveBayesTextClassifier.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -616,7 +625,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/example/naiveBayes_test.scala" />
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="300">
           <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
         </state>
       </provider>
@@ -628,24 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NB2.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="e#20#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/spark-prediction/part-00000-d0a777e9-ec13-45e0-b8db-cac7f613cfce-c000.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/spark-prediction-full/part-00000-12cbecea-bec7-4851-8e85-e0c8cac98471-c000.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1354" />
-      </provider>
-    </entry>
+    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/spark-prediction-full/part-00000-12cbecea-bec7-4851-8e85-e0c8cac98471-c000.json" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/classifier/NaiveBayesTextClassifier.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -670,16 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesClass.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-          <folding>
-            <element signature="e#19#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -689,10 +671,30 @@
     </entry>
     <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesTextClassifier.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+        <state relative-caret-position="77">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="26" />
           <folding>
             <element signature="e#20#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NB2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#20#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Academics/2. Semester 3/Scala/final_project/ml_spark/src/main/scala/classifier/NaiveBayesClass.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="e#19#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
