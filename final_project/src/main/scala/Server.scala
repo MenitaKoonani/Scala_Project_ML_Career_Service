@@ -1,10 +1,11 @@
 import java.io.{File, FileOutputStream}
 import java.nio.file.Paths
 import java.util.UUID
+import java.util.logging.{Level, Logger}
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.model.{HttpResponse, Multipart, StatusCodes}
+import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives.{entity, _}
 import akka.http.scaladsl.server.directives.FileInfo
 import akka.stream.ActorMaterializer
@@ -12,14 +13,12 @@ import akka.stream.scaladsl.FileIO
 import akka.util.ByteString
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.text.PDFTextStripper
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+import sparkModel.{JobMatch, NaiveBayesClass, WordFilter}
 
 import scala.concurrent.ExecutionContext
 import scala.util.{Failure, Success}
-import org.apache.log4j.{Level, Logger}
-import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
-import org.codehaus.jettison.json.JSONObject
-import sparkModel.{JobMatch, NaiveBayesClass, WordFilter}
 
 object Server extends App {
 
@@ -53,13 +52,16 @@ object Server extends App {
     File.createTempFile(fileInfo.fileName, ".tmp")
   def route = path("") {
     get {
-      complete(jsonString)
+      val response = HttpResponse(entity = HttpEntity(ContentTypes.`application/json`, jsonString))
+      complete(response)
     }
   } ~
     pathPrefix("resume_txt") {
       post {
         entity(as[String]) { resume_text =>
-          complete(resume_text)
+          val body = s"""{"body": "${resume_text}"}"""
+          val response = HttpResponse(entity = HttpEntity(ContentTypes.`application/json`, body))
+          complete(response)
         }
       }
     } ~
@@ -99,13 +101,13 @@ object Server extends App {
                   val result_match = new JobMatch()
                   val array = result_match.getJobMatches(predicted_role,spark)
                   println(array)
-                  val jsonString =
+                  val resultJsonString =
                     s"""{
                       |"Predicted Role": "$predicted_role",
                       | "Available Jobs" : [$array]
                       |}""".stripMargin
 
-                  HttpResponse(StatusCodes.OK, entity = jsonString)
+                  HttpResponse(StatusCodes.OK, entity = HttpEntity(ContentTypes.`application/json`, resultJsonString))
                 }.recover {
                   case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
                 }
@@ -124,6 +126,11 @@ object Server extends App {
     }.runFold(0)(_ + _.length)
   }
 
-  Http().bindAndHandle(route, host, port)
+  val bindingFuture = Http().bindAndHandle(route, host, port)
+
+  bindingFuture.onComplete {
+    case Success(serverBinding) => println(s"Listening to ${serverBinding.localAddress}")
+    case Failure(error) => println(s"error: ${error.getMessage}")
+  }
 
 }
