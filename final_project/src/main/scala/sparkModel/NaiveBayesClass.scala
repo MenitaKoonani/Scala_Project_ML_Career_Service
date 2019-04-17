@@ -1,5 +1,14 @@
-package sparkModel
+/**
+  * The Naive Bayes Classifier class
+  * To make simple functions to run training and prediction
+  *
+  * @author  Sreerag Mandakathil Sreenath
+  * @version 1.0
+  * @since   2019-04-17
+  */
 
+package sparkModel
+// Importing libraries
 import org.apache.spark.ml.classification.NaiveBayes
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{HashingTF, IndexToString, StringIndexer, Tokenizer}
@@ -8,7 +17,14 @@ import org.apache.spark.sql.SparkSession
 
 
 class NaiveBayesClass{
-
+  /**
+    * Function to validate the dataframe headers
+    *
+    * @param resumeText String that contains the content of the resume
+    * @param modelPath String defining the path to the model
+    * @param spark Spark session variable
+    * @return Predicted role for the resume
+    */
   def predict(resumeText : String, modelPath: String, spark : SparkSession): String ={
 
     val modelPipline = PipelineModel.load(modelPath)
@@ -24,11 +40,19 @@ class NaiveBayesClass{
 
     val result = predictions.select("predicted_job_title").head().getString(0)
 
-//    println(result)
 
     return result
 
   }
+
+  /**
+    * Function to validate the dataframe headers
+    *
+    * @param dataFilePath String that contains the path to the training data
+    * @param modelSavePath String defining the path to save the model
+    * @param spark Spark session variable
+    * @return Predicted role for the resume
+    */
 
   def trainModel(dataFilePath : String, modelSavePath: String, spark : SparkSession): Unit ={
 
