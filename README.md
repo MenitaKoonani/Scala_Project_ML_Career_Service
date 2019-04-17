@@ -1,7 +1,7 @@
 # Scala Project ML Career Service
 CSYE7200 Scala Project : ML Career Service
 
-# Introduction
+## Introduction
 -   MLBC is Web based system is for candidates who are seeking a job and recruiter who are looking for the right talent.
     
 -   The platform scrapes and analyzes publicly available job posting data from sites like Glassdoor, LinkedIn, etc.
@@ -10,7 +10,7 @@ CSYE7200 Scala Project : ML Career Service
     
 -   The platform will also help us to gain statistical information about the latest job trend.
 
-# Team Details
+## Team Details
 
 | Name| NUID| Email Address|
 | ------------- |:-------------:| -----:|
@@ -18,7 +18,7 @@ CSYE7200 Scala Project : ML Career Service
 | Raghavi Kirouchenaradjou     | 001826638|   [kirouchenaradjou.r@husky.neu.edu](mailto:kirouchenaradjou.r@husky.neu.edu) |
 | Sreerag Mandakathil Sreenath | 001838559      |    [mandakathil.s@husky.neu.edu](mailto:mandakathil.s@husky.neu.edu) |
 
-# Use case
+## Use case
 
 -   Actor :
     
@@ -37,14 +37,35 @@ CSYE7200 Scala Project : ML Career Service
 
 	- The system will recommend the user the best job titles based on their skills mentioned in the resume. The system will also send in URLs to apply for the suggested job titles. Predict salary expectation in different profiles and which is best suitable for that resume
 
-# Proposed Stack
+## Project Stack
 
-| Sno.| Task| Library|
-| ------------- |:-------------:| -----:|
-| 1.   | Web Scraping|Python : Scrappy, Beautiful Soup and LXML |
-|2.    | Data Analytics|   Python : Scipy, Pandas, Seaborn |
-|3.  | Classification and ML modeling|    Scala/Spark : NLTK and Classification|
-|4.  | Web Server and Rest API|    Scala : AKKA HTML |
+| Sno.| Task                          | Library|
+| --- |:-----------------------------:| ----------------------------------------:|
+| 1.  | Web Scraping                  |Python : Scrappy, Beautiful Soup and LXML |
+| 2.  | Data Analytics                |Python : Scipy, Pandas, Seaborn           |
+| 3.  | Classification and ML modeling|Scala/Spark : NLTK and Classification     |
+| 4.  | Web Server and Rest API       |Scala : AKKA HTML                         |
+
+
+## Model Training Result
+The model is trained using Naive bayes classifier for both raw and cleaned data which were scraped from indeed.com on 04-11-2019
+
+The data was split into 3:1 ratio for testing and training 
+
+The percentage of accuracy as follows:
+
+| Sno. | Type of data              | Accuray |
+|:----:|:-------------------------:|:-------:|
+| 1.   | indeed 04-11-19 (raw)     |  87.75% |
+| 2.   | indeed 04-11-19 (cleaned) |  90.48% |
+
+## Final Project Execution
+
+To execute the project navigate to the final_project folder and open it on Intellij
+
+```
+\Scala_Project_ML_Career_Service\final_project\
+```
 
 
 
