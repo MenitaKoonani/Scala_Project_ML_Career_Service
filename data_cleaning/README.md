@@ -21,8 +21,45 @@ In this section of the project we will be trying to clean the scrapped data by r
 
 ## Required files
 The scala application is expecting to find the json scrapped data in the data directory
+JSON expected: 
+```json
+[
+	{
+		"job_title": "", 
+		"job_posting_desc": "", 
+		"job_posting_url": "", 
+		"scrap_date": "", 
+		"job_posting_salary": "", 
+		"job_posting_title": "", 
+		"location": "", 
+		"company": ""
+	},
+	{
+		"job_title": "", 
+		"job_posting_desc": "", 
+		"job_posting_url": "", 
+		"scrap_date": "", 
+		"job_posting_salary": "", 
+		"job_posting_title": "", 
+		"location": "", 
+		"company": ""
+	}
+]
+```
+
+## Processes done
+The job_posting_description and job_posting_salary columns are cleaned by the following steps:
+ - job_posting_desc column
+	 * Conversion of  into lowercase
+	 * Removing punctuation from the text
+	 * Removing stop words form the text
+	 * Converting them back into String
+- job_posting_salary column
+	 * Generating lower bound of salary
+	 * Generating upper bound of salary
+	 * Calculating average bound of salary
 
 ## Intructions for execution
-Run CleaningScrapedData.scala file in scala/DataCleaning directory
+Run application CleaningScrapedData.scala file in scala/DataCleaning directory
 
 ## Notes
