@@ -59,6 +59,23 @@ The percentage of accuracy as follows:
 | 1.   | indeed 04-11-19 (raw)     |  87.75% |
 | 2.   | indeed 04-11-19 (cleaned) |  90.48% |
 
+## Web Service
+- Developing WEB API's using AKKA HTTP
+
+## Technology Stack
+
+- **_AKKA HTTP_**: Akka HTTP modules implement a full server and client-side HTTP stack on top of akka-actor and akka-stream.
+- **_PDFTextStripper_**: This class will take a pdf document and strip out all of the text and ignore the formatting and such.
+
+| Library              | Version | 
+| ---------------------|:-------:|
+| akka-actor           | 2.5.13  |
+| akka-http            | 10.1.3  |
+| akka-stream          | 2.5.13  |
+| pdfbox               | 2.0.1   |
+| fontbox              | 2.0.1   |
+
+
 ## Final Project Execution
 
 To execute the project navigate to the final_project folder and open it on Intellij
@@ -66,6 +83,41 @@ To execute the project navigate to the final_project folder and open it on Intel
 ```
 \Scala_Project_ML_Career_Service\final_project\
 ```
+##### Run it via the Postman or Advanced Rest Client
 
+_Method_ : POST
+_Endpoint_ : http://localhost:9000/pdf_file
+_Body_ (form-encoded): Upload a PDF File by providing the key as "filePdfUpload" and value as the path to the PDF file
+_Response_ : A json listing the Predicted Job Title and the Available Job Links as follows
+```json
+{
+    "Predicted Role": "software engineer",
+    "Available Jobs": [
+        {
+            "job_posting_title": "Software Quality Engineer",
+            "company": "DELL",
+            "location": "Boston, MA",
+            "job_posting_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0DhVAxkc_TxySVbUOs6bxWYWOfhmDTNcVTjFFBAY1FXZ_f-lnuRL7vGmhrcjkjTSE3fin6ve_ms4_9mScuaceMLDlH5RM-fUHmHxZE5PndrOse_GkPZwuCVyi6uzk699vmQcNe663vhzNZYMDTKXCuX_SXq9blbeu-m_sPFggUQmSJ3v2d4J7fnz01fJbN01w-4bzs4qhEzv8nkSkWNqEwrSGidIZ4UO13FjMoRpSx5MCV6FY8nm0BD3WFo6ZkQjgkPxQ4F4_N8f-MKYhPbXYZZmB0dwoVPXx02RGboZ7Ar7vzZtO8Lza-DXlpN05wt-_4ghGoPuQe6TKMc4NBW8q4mIDORxZ-dUoVWA76HFzHSSMDBlBWlT5fVyILzmdm7FEoPlA_waWP3GgMYUwRaqm204uEfvZJ3Osdb8u9BnQp4cw==&vjs=3&p=9&fvj=1",
+            "job_posting_salary": "None"
+        },
+         {
+            "job_posting_title": "User Interface Software Engineer",
+            "company": "JW Fishers Mfg., Inc.",
+            "location": "Boston, MA",
+            "job_posting_url": "https://www.indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0DhVAxkc_TxySVbUOs6bxWYWOfhmDTNcVTjFFBAY1FXZ_f-lnuRL7vGmhrcjkjTSE3fin6ve_ms4_9mScuaceMLDlH5RM-fUHmHxZE5PndrOse_GkPZwuCVyi6uzk699vmQcNe663vhzNZYMDTKXCuX_SXq9blbeu-m_sPFggUQmSJ3v2d4J7fnz01fJbN01w-4bzs4qhEzv8nkSkWNqEwrSGidIZ4UO13FjMoRpSx5MCV6FY8nm0BD3WFo6ZkQjgkPxQ4F4_N8f-MKYhPbXYZZmB0dwoVPXx02RGboZ7Ar7vzZtO8Lza-DXlpN05wt-_4ghGoPuQe6TKMc4NBW8q4mIDORxZ-dUoVWA76HFzHSSMDBlBWlT5fVyILzmdm7FEoPlA_waWP3GgMYUwRaqm204uEfvZJ3Osdb8u9BnQp4cw==&vjs=3&p=9&fvj=1",
+            "job_posting_salary": "80000 - 120000"
+         }
+     ]
+}
+```
+If the uploaded file is not a PDF you would get the following :
+```json
+{
+    "errorMessage": "Error in file uploading:only PDF allowed"
+}
+```
 
-
+## Notes
+To know more about 
+- AKKA HTTP : https://doc.akka.io/docs/akka-http/current/
+- PdfTextStripper : https://pdfbox.apache.org/docs/2.0.7/javadocs/org/apache/pdfbox/text/PDFTextStripper.html
