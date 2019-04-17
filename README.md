@@ -85,10 +85,10 @@ To execute the project navigate to the final_project folder and open it on Intel
 ```
 ##### Run it via the Postman or Advanced Rest Client
 
-_Method_ : POST
-_Endpoint_ : http://localhost:9000/pdf_file
-_Body_ (form-encoded): Upload a PDF File by providing the key as "filePdfUpload" and value as the path to the PDF file
-_Response_ : A json listing the Predicted Job Title and the Available Job Links as follows
+_Method_ : POST <br>
+_Endpoint_ : http://localhost:9000/pdf_file <br>
+_Body_ (form-encoded): Upload a PDF File by providing the key as "filePdfUpload" and value as the path to the PDF file <br>
+_Response_ : A json listing the Predicted Job Title and the Available Job Links as follows <br>
 ```json
 {
     "Predicted Role": "software engineer",
