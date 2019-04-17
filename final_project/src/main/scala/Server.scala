@@ -34,10 +34,6 @@ object Server extends App {
     .appName("NaiveBayes Text classifier")
     .config(conf)
     .getOrCreate()
-
-
-
-
   val host = "0.0.0.0"
   val port = 9000
   val jsonString = """
@@ -45,6 +41,12 @@ object Server extends App {
   "message": "Hello World"
   }
   """
+  val errorMessageString = """
+  {
+  "errorMessage": "Error in file uploading:only PDF allowed"
+  }
+  """
+
   implicit val system: ActorSystem = ActorSystem("helloworld")
   implicit val executor: ExecutionContext = system.dispatcher
   implicit val materializer: ActorMaterializer = ActorMaterializer()
@@ -109,7 +111,7 @@ object Server extends App {
 
                   HttpResponse(StatusCodes.OK, entity = HttpEntity(ContentTypes.`application/json`, resultJsonString))
                 }.recover {
-                  case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = "Error in file uploading:only PDF allowed")
+                  case ex: Exception => HttpResponse(StatusCodes.InternalServerError, entity = HttpEntity(ContentTypes.`application/json`, errorMessageString))
                 }
               }
           }
