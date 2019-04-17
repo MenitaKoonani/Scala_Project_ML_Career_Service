@@ -1,3 +1,13 @@
+/**
+  * The Naive Bayes App to train the machine learning model
+  *
+  * @author  Sreerag Mandakathil Sreenath
+  * @version 1.0
+  * @since   2019-04-17
+  */
+
+
+// Importing Libraries
 import org.apache.spark.SparkConf
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.classification.NaiveBayes
@@ -5,6 +15,7 @@ import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature._
 import org.apache.spark.sql.{SaveMode, SparkSession}
 import org.apache.log4j.{Level, Logger}
+
 
 object NaiveBayesTextClassifier extends App {
 
@@ -16,6 +27,7 @@ object NaiveBayesTextClassifier extends App {
   conf.setMaster("local")
   conf.setAppName("NaiveBayes Text classifier")
 
+  // Starting Spark session
   val spark = SparkSession
     .builder()
     .appName("NaiveBayes Text classifier")
@@ -24,7 +36,7 @@ object NaiveBayesTextClassifier extends App {
 
 
   // Specifying the location of the data file
-  val dataFile = "src/main/scala/data/indeed_11-04-2019_cleaned.json"
+  val dataFile = "src/main/scala/data/indeed_11-04-2019.json"
 
   // Loading the data file into a data frame
   val df = spark.read.json(dataFile)
@@ -64,8 +76,11 @@ object NaiveBayesTextClassifier extends App {
   val predictions = model.transform(testData)
   val evaluatorRF = new MulticlassClassificationEvaluator().setLabelCol("label").setPredictionCol("prediction").setMetricName("accuracy")
   val accuracy = evaluatorRF.evaluate(predictions)
+
+  // Prints the accuracy of the model
   println(f"Accuracy = $accuracy%.4f")
 
+  // Saving model to classier folder
   model.write.overwrite().save("src/main/scala/classifier/spark-model")
 
   spark.stop()
