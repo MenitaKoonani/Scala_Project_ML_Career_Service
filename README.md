@@ -39,13 +39,28 @@ CSYE7200 Scala Project : ML Career Service
 
 ## Project Stack
 
-| Sno.| Task                          | Library|
-| --- |:-----------------------------:| ----------------------------------------:|
-| 1.  | Web Scraping                  |Python : Scrappy, Beautiful Soup and LXML |
-| 2.  | Data Analytics                |Python : Scipy, Pandas, Seaborn           |
-| 3.  | Classification and ML modeling|Scala/Spark : NLTK and Classification     |
-| 4.  | Web Server and Rest API       |Scala : AKKA HTML                         |
+| Sno.| Task                          | Library						 |
+| --- |:-----------------------------:|:------------------------------------------------:|
+| 1.  | Web Scraping                  |Python : Scrappy, Beautiful Soup and LXML 	 |
+| 2.  | Data Cleaning                 |Scala/Spark : RegexTokenizer and StopWordsRemover |
+| 3.  | Classification and ML modeling|Scala/Spark : NLTK and Classification     	 |
+| 4.  | Web Server and Rest API       |Scala : AKKA HTML                         	 |
 
+## Web Scraping
+Indeed.com is Web Scrapped for 3 Job Titles - Software Engineer, Data Scientist, Technical Writer to get information for about 100 jobs per job title using Python.
+
+Attributes that are scrapped for every job title:
+ - Title
+ - Url
+ - Description
+ - Company
+ - Salary
+ - Location
+
+These attributes are scrapped using libraries like Scrapy and Beautifufl Soup and are stored as a json file.
+
+## Data Cleaning
+The scrapped file is cleaned in Scala to remove punctuation and stopwords from the job_posting_desc column in order to make it fit for training the model.
 
 ## Model Training Result
 The model is trained using Naive bayes classifier for both raw and cleaned data which were scraped from indeed.com on 04-11-2019

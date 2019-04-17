@@ -25,24 +25,34 @@ JSON expected:
 ```json
 [
 	{
+		"company": "",
 		"job_title": "", 
+		"location": "", 
+		"job_posting_title": "",
 		"job_posting_desc": "", 
 		"job_posting_url": "", 
-		"scrap_date": "", 
 		"job_posting_salary": "", 
-		"job_posting_title": "", 
-		"location": "", 
-		"company": ""
+		"salary_period": "",
+		"salary_lower": "",
+		"salary_upper": "",
+		"salary_average": "",
+		"scrap_date": "", 
+		"scrap_website": ""
 	},
 	{
+		"company": "",
 		"job_title": "", 
+		"location": "", 
+		"job_posting_title": "",
 		"job_posting_desc": "", 
 		"job_posting_url": "", 
-		"scrap_date": "", 
 		"job_posting_salary": "", 
-		"job_posting_title": "", 
-		"location": "", 
-		"company": ""
+		"salary_period": "",
+		"salary_lower": "",
+		"salary_upper": "",
+		"salary_average": "",
+		"scrap_date": "", 
+		"scrap_website": ""
 	}
 ]
 ```
@@ -60,6 +70,6 @@ The job_posting_description and job_posting_salary columns are cleaned by the fo
 	 * Calculating average bound of salary
 
 ## Intructions for execution
-Run application CleaningScrapedData.scala file in scala/DataCleaning directory
+Navigate to scala/DataCleaning directory and run application CleaningScrapedData.scala
 
 ## Notes
