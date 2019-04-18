@@ -72,3 +72,8 @@ The percentage of accuracy as follows:
 |:----:|:-------------------------:|:-------:|
 | 1.   | indeed 04-11-19 (raw)     |  87.75% |
 | 2.   | indeed 04-11-19 (cleaned) |  90.48% |
+
+## Notes
+
+Spark : [https://spark.apache.org/docs/0.9.1/scala-programming-guide.html](https://spark.apache.org/docs/0.9.1/scala-programming-guide.html)
+Naive Bayes : [https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html](https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html)
