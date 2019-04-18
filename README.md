@@ -41,7 +41,11 @@ CSYE7200 Scala Project : ML Career Service
 
 | Sno.| Task                          | Library						 |
 | --- |:-----------------------------:|:------------------------------------------------:|
+<<<<<<< HEAD
 | 1.  | Web Scraping                  |Python : Scrapy, BeautifulSoup and LXML 	 |
+=======
+| 1.  | Web Scraping                  |Python : Scrappy, Beautiful Soup and LXML 	 |
+>>>>>>> 94e1902a67f9b438797740cec16c997dad4cad62
 | 2.  | Data Cleaning                 |Scala/Spark : RegexTokenizer and StopWordsRemover |
 | 3.  | Classification and ML modeling|Scala/Spark : NLTK and Classification     	 |
 | 4.  | Web Server and Rest API       |Scala : AKKA HTML                         	 |

@@ -65,4 +65,3 @@ If the uploaded file is not a PDF you would get the following :
     "errorMessage": "Error in file uploading:only PDF allowed"
 }
 ```
-## Notes
