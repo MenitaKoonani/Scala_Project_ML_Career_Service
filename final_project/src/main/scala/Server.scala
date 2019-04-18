@@ -62,7 +62,21 @@ object Server extends App {
     pathPrefix("resume_txt") {
       post {
         entity(as[String]) { resume_text =>
-          val body = s"""{"body": "${resume_text}"}"""
+          var model = new NaiveBayesClass()
+          var wordfilter = new WordFilter()
+
+            var resume_cleaned = wordfilter.stringOperations(resume_text,spark)
+            var predicted_role = model.predict(resume_cleaned,"src/main/scala/classifier/spark-model",spark)
+            println(predicted_role)
+            val result_match = new JobMatch()
+            val array = result_match.getJobMatches(predicted_role,spark)
+            println(array)
+            val resultJsonString =
+              s"""{
+                 |"Predicted Role": "$predicted_role",
+                 | "Available Jobs" : [$array]
+                 |}""".stripMargin
+          val body = s"""{"body": "${resultJsonString}"}"""
           val response = HttpResponse(entity = HttpEntity(ContentTypes.`application/json`, body))
           complete(response)
         }
@@ -72,13 +86,26 @@ object Server extends App {
       post {
         fileUpload("fileUpload") {
           case (fileInfo, fileStream) =>
-            //get the file
+            var model = new NaiveBayesClass()
+            var wordfilter = new WordFilter()
             val sink = FileIO.toPath(Paths.get("/tmp") resolve fileInfo.fileName)
             //// materialize the flow, getting the Sinks materialized value
             val writeResult = fileStream.runWith(sink)
+
             onSuccess(writeResult) { result =>
+              var resume_cleaned = wordfilter.stringOperations(result.toString(),spark)
+              var predicted_role = model.predict(resume_cleaned,"src/main/scala/classifier/spark-model",spark)
+              println(predicted_role)
+              val result_match = new JobMatch()
+              val array = result_match.getJobMatches(predicted_role,spark)
+              println(array)
+              val resultJsonString =
+                s"""{
+                   |"Predicted Role": "$predicted_role",
+                   | "Available Jobs" : [$array]
+                   |}""".stripMargin
               result.status match {
-                case Success(_) => complete(s"Successfully written ${result.count} bytes")
+                case Success(_) => complete(resultJsonString)
                 case Failure(e) => throw e
               }
             }
