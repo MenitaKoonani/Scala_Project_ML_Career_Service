@@ -71,7 +71,7 @@ The job_posting_description and job_posting_salary columns are cleaned by the fo
 
 ## Intructions for execution
 Navigate to the below file and run the application file
-```scala/DataCleaning/CleaningScrapedData.scala```
+<br>```scala/DataCleaning/CleaningScrapedData.scala```
 
 ## Notes
 To know more about 
