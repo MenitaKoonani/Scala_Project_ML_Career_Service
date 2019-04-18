@@ -52,6 +52,7 @@ object Server extends App {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   def tempDestination(fileInfo: FileInfo): File =
     File.createTempFile(fileInfo.fileName, ".tmp")
+  // prints the helloworld message as http response
   def route = path("") {
     get {
       val response = HttpResponse(entity = HttpEntity(ContentTypes.`application/json`, jsonString))
@@ -88,6 +89,7 @@ object Server extends App {
             var model = new NaiveBayesClass()
             var wordfilter = new WordFilter()
             val sink = FileIO.toPath(Paths.get("/tmp") resolve fileInfo.fileName)
+            //// materialize the flow, getting the Sinks materialized value
             val writeResult = fileStream.runWith(sink)
 
             onSuccess(writeResult) { result =>
@@ -119,6 +121,7 @@ object Server extends App {
                 println(fileName)
 
                 processFile(filePath,fileData).map { fileSize =>
+                  // takes the pdf document and strip out all of the text
                   val pdf = PDDocument.load(new File(filePath))
                   val stripper = new PDFTextStripper
                   stripper.setStartPage(1)
@@ -144,6 +147,7 @@ object Server extends App {
               }
           }
     }
+  //Method to store the uploaded PDF file in the Temp folder
   private def processFile(filePath: String, fileData: Multipart.FormData) = {
     val fileOutput = new FileOutputStream(filePath)
     fileData.parts.mapAsync(1) { bodyPart ⇒

@@ -34,9 +34,10 @@ The scala application is expecting to find a PDF/text uploaded by the user
 ## Instructions for execution
 Run it via the Postman or Advanced Rest Client
 
-Endpoint : http://localhost:9000/pdf_file
-Body (form-encoded): Upload a PDF File by providing the key as "filePdfUpload" and value as the path to the PDF file
-Response : A json listing the Predicted Job Title and the Available Job Links as follows
+_Method_ : POST
+_Endpoint_ : http://localhost:9000/pdf_file
+_Body_ (form-encoded): Upload a PDF File by providing the key as "filePdfUpload" and value as the path to the PDF file
+_Response_ : A json listing the Predicted Job Title and the Available Job Links as follows
 ```json
 {
     "Predicted Role": "software engineer",
