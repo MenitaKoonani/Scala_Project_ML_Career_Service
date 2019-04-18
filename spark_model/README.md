@@ -75,5 +75,5 @@ The percentage of accuracy as follows:
 
 ## Notes
 
-Spark : [https://spark.apache.org/docs/0.9.1/scala-programming-guide.html](https://spark.apache.org/docs/0.9.1/scala-programming-guide.html)
+Spark : [https://spark.apache.org/docs/0.9.1/scala-programming-guide.html](https://spark.apache.org/docs/0.9.1/scala-programming-guide.html) <br>
 Naive Bayes : [https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html](https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html)
