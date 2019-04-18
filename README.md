@@ -47,9 +47,9 @@ CSYE7200 Scala Project : ML Career Service
 | 4.  | Web Server and Rest API       |Scala : AKKA HTML                         	 |
 
 ## Web Scraping
-Indeed.com is Web Scrapped for 3 Job Titles - Software Engineer, Data Scientist, Technical Writer to get information for about 100 jobs per job title using Python.
+Indeed.com is Web Scraped for 3 Job Titles - Software Engineer, Data Scientist, Technical Writer to get information for about 100 jobs per job title using Python.
 
-Attributes that are scrapped for every job title:
+Attributes that are scraped for every job title:
  - Title
  - Url
  - Description
@@ -57,10 +57,10 @@ Attributes that are scrapped for every job title:
  - Salary
  - Location
 
-These attributes are scrapped using libraries like Scrapy and Beautifufl Soup and are stored as a json file.
+These attributes are scraped using libraries like Scrapy and Beautiful Soup and are stored as a json file.
 
 ## Data Cleaning
-The scrapped file is cleaned in Scala to remove punctuation and stopwords from the job_posting_desc column in order to make it fit for training the model.
+The scraped file is cleaned in Scala to remove punctuation and stopwords from the job_posting_desc column in order to make it fit for training the model.
 
 ## Model Training Result
 The model is trained using Naive bayes classifier for both raw and cleaned data which were scraped from indeed.com on 04-11-2019
