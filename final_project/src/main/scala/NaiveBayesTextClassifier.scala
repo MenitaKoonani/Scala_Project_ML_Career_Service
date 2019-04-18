@@ -80,7 +80,7 @@ object NaiveBayesTextClassifier extends App {
   // Prints the accuracy of the model
   println(f"Accuracy = $accuracy%.4f")
 
-  // Saving model to classier folder
+  // Saving model to classifier folder
   model.write.overwrite().save("src/main/scala/classifier/spark-model")
 
   spark.stop()
