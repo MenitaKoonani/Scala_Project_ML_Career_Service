@@ -70,7 +70,8 @@ The job_posting_description and job_posting_salary columns are cleaned by the fo
 	 * Calculating average bound of salary
 
 ## Intructions for execution
-Navigate to scala/DataCleaning directory and run application CleaningScrapedData.scala
+Navigate to the below file and run the application file
+```scala/DataCleaning/CleaningScrapedData.scala```
 
 ## Notes
 To know more about 
