@@ -4,7 +4,7 @@ CSYE7200 Scala Project : ML Career Service
 # Data Cleaning
 
 ## Introduction
-In this section of the project we will be trying to clean the scrapped data by removing punctuation and stopwords from the mainly the job_posting_desc column
+In this section of the project we will be trying to clean the scraped data by removing punctuation and stopwords from the mainly the job_posting_desc column
 
 ## Technology Stack
 
@@ -20,7 +20,7 @@ In this section of the project we will be trying to clean the scrapped data by r
 
 
 ## Required files
-The scala application is expecting to find the json scrapped data in the data directory
+The scala application is expecting to find the json scraped data in the data directory
 JSON expected: 
 ```json
 [
