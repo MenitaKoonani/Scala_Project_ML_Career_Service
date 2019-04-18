@@ -73,3 +73,6 @@ The job_posting_description and job_posting_salary columns are cleaned by the fo
 Navigate to scala/DataCleaning directory and run application CleaningScrapedData.scala
 
 ## Notes
+To know more about 
+- StopWordsRemover: https://spark.apache.org/docs/latest/ml-features.html#stopwordsremover
+- RegexTokenizer: https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.ml.feature.RegexTokenizer
