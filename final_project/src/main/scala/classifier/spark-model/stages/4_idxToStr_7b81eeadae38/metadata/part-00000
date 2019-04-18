@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.IndexToString","timestamp":1555525457528,"sparkVersion":"2.3.0","uid":"idxToStr_7b81eeadae38","paramMap":{"outputCol":"predicted_job_title","inputCol":"prediction","labels":["data analyst","technical writer","software engineer","data scientist"]}}
