@@ -4,7 +4,7 @@ CSYE7200 Scala Project : ML Career Service
 # Web Scraping
 
 ## Introduction
-In this section of the project we will be scrapping data from Indeed.com using Python
+In this section of the project we will be scraping data from Indeed.com using Python
 
 ## Technology Stack
 
@@ -20,8 +20,8 @@ Libraries used:
 - logging
 
 ## Processes done
-A web scrapper is defined to scrap indeed.com with the specified url search parameters and is store into a json file.
-Methods are defined in the IndeedScrapper class to parse the main job page as well as each of the individual job pages until a depth level specified which is 1.
+A web scraper is defined to scrap indeed.com with the specified url search parameters and is store into a json file.
+Methods are defined in the IndeedScraper class to parse the main job page as well as each of the individual job pages until a depth level specified which is 1.
 
 JSON generated: 
 ```json
