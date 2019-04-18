@@ -55,3 +55,6 @@ JSON generated:
 Run Python notebook -> Kernel Menu -> Restart and run all
 
 ## Notes
+To know more about 
+- scrapy: https://docs.scrapy.org/en/latest/intro/overview.html
+- BeatifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

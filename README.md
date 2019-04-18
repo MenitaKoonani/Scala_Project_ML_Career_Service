@@ -41,7 +41,7 @@ CSYE7200 Scala Project : ML Career Service
 
 | Sno.| Task                          | Library						 |
 | --- |:-----------------------------:|:------------------------------------------------:|
-| 1.  | Web Scraping                  |Python : Scrappy, Beautiful Soup and LXML 	 |
+| 1.  | Web Scraping                  |Python : Scrapy, BeautifulSoup and LXML 	 |
 | 2.  | Data Cleaning                 |Scala/Spark : RegexTokenizer and StopWordsRemover |
 | 3.  | Classification and ML modeling|Scala/Spark : NLTK and Classification     	 |
 | 4.  | Web Server and Rest API       |Scala : AKKA HTML                         	 |
@@ -136,3 +136,13 @@ If the uploaded file is not a PDF you would get the following :
 To know more about 
 - AKKA HTTP : https://doc.akka.io/docs/akka-http/current/
 - PdfTextStripper : https://pdfbox.apache.org/docs/2.0.7/javadocs/org/apache/pdfbox/text/PDFTextStripper.html
+
+Data Cleaning:
+
+Scala:
+- StopWordsRemover: https://spark.apache.org/docs/latest/ml-features.html#stopwordsremover
+- RegexTokenizer: https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.ml.feature.RegexTokenizer
+
+Python:
+- scrapy: https://docs.scrapy.org/en/latest/intro/overview.html
+- BeatifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
